@@ -14,5 +14,5 @@ python productpage.py 9080
 docker build -t productpage .
 
 # Run docker
-docker run -d --rm -p 8084:9080 productpage
+docker run -d --rm -p 8083:9080 productpage
 ```
