@@ -10,4 +10,4 @@ RUN pip install -r src/requirements.txt
 
 EXPOSE 9080
 
-CMD ["python" ,"productpage.py", "9080"]
+CMD ["python" ,"src/productpage.py", "9080"]
