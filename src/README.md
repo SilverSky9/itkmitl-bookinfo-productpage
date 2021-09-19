@@ -10,9 +10,9 @@ python productpage.py 9080
 ```
 
 ```bash
-# Build docker 
-docker build -t productpage .
+# Build docker productpage service
+docker build -t productpage $(pwd)/itkmitl-bookinfo-productpage
 
-# Run docker
-docker run -d --rm -p 8083:9080 productpage
+# Run productpage service
+docker run -d --name productpage-service --rm -p 8083:9080 --link details-service:details-service --link ratings-service:ratings-service --link review-service:review-service  -e 'DETAILS_HOSTNAME=http://details-service:9080' -e 'RATINGS_HOSTNAME=http://ratings-service:8080' -e 'REVIEWS_HOSTNAME=http://review-service:9080' productpage
 ```
